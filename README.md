@@ -1,91 +1,36 @@
-# Pesquisa de Feedback do Programa de Treinamento de Jiu-Jitsu
+# Sistema de Pesquisa de Satisfação do Treinamento de Jiu-Jitsu
 
-Este projeto coleta e analisa o feedback de um programa de treinamento de Jiu-Jitsu. Ele inclui uma pesquisa semanal, uma pesquisa mensal e uma página de resultados, utilizando Streamlit para criar uma interface web interativa.
+Este projeto é um sistema de pesquisa desenvolvido para coletar e analisar feedback de participantes de um programa de treinamento de Jiu-Jitsu. Ele utiliza o Streamlit para criar interfaces de usuário interativas para a coleta de dados e geração de relatórios.
 
 ## Estrutura do Projeto
 
-/PesquisaJiuJitsu
-│
-├── .streamlit
-│ └── secrets.toml
-├── logo.png
-├── pesquisa_semanal.py
-├── pesquisa_mensal.py
-├── resultados.py
-├── requirements.txt
-└── README.md
-## Instruções de Uso
+O projeto está organizado nos seguintes arquivos:
 
-### Pré-requisitos
+- `pesquisa_semanal.py`: Script para a coleta de respostas semanais dos participantes.
+- `pesquisa_mensal.py`: Script para a coleta de respostas mensais dos participantes.
+- `resultados.py`: Script para a geração de relatórios baseados nas respostas coletadas.
 
-- Python 3.x
-- Bibliotecas listadas em `requirements.txt`
-
-### Instalação
-
-1. Clone o repositório:
-    ```bash
-    git clone https://github.com/seu-usuario/PesquisaJiuJitsu.git
-    cd PesquisaJiuJitsu
-    ```
-
-2. Instale as dependências:
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-3. Configure a senha e a chave da API OpenAI:
-    - Crie um arquivo `secrets.toml` no diretório `.streamlit`:
-        ```bash
-        mkdir -p .streamlit
-        touch .streamlit/secrets.toml
-        ```
-    - Adicione a senha e a chave da API OpenAI ao arquivo `secrets.toml`:
-        ```toml
-        # .streamlit/secrets.toml
-        password = "sua_senha_secreta"
-        openai_api_key = "sua_chave_api_openai"
-        ```
-
-### Execução
-
-1. Coloque a logo da sua empresa no arquivo `logo.png`.
-
-2. Para executar a pesquisa semanal:
-    ```bash
-    streamlit run pesquisa_semanal.py
-    ```
-
-3. Para executar a pesquisa mensal:
-    ```bash
-    streamlit run pesquisa_mensal.py
-    ```
-
-4. Para visualizar os resultados:
-    ```bash
-    streamlit run resultados.py
-    ```
+## Funcionalidades
 
 ### Coleta de Respostas
 
-As perguntas serão exibidas na interface web, e você deve selecionar a opção desejada e clicar no botão "Enviar".
+- **Pesquisa Semanal**: Coleta feedback sobre as aulas de Jiu-Jitsu a cada semana, abordando aspectos como satisfação, pertencimento à equipe, resiliência, produtividade e estresse.
+- **Pesquisa Mensal**: Coleta feedback sobre o impacto geral do programa de treinamento de Jiu-Jitsu, incluindo aspectos de saúde mental e física.
 
-### Armazenamento de Respostas
+### Geração de Relatórios
 
-As respostas são armazenadas em arquivos CSV (`respostas_semanal.csv` e `respostas_mensal.csv`) para análise posterior.
+- Gera relatórios visuais das respostas coletadas, permitindo uma análise fácil dos dados.
+- Inclui gráficos de barras para cada pergunta, com a opção de adicionar um logotipo personalizado.
 
-### Acesso aos Resultados
+## Pré-requisitos
 
-Para acessar os resultados, selecione o tipo de pesquisa na página "Resultados" e insira a senha correta. Você poderá visualizar os gráficos gerados com base nas respostas coletadas e receberá insights e sugestões de melhorias do ChatGPT.
+- **Python 3.x**: Certifique-se de ter o Python instalado na sua máquina.
+- **Bibliotecas Python**: As seguintes bibliotecas são necessárias:
+  - `streamlit`
+  - `pandas`
+  - `matplotlib`
 
-### Acesso via Mobile
+Você pode instalar as dependências necessárias executando:
 
-O aplicativo Streamlit pode ser acessado via mobile através do navegador, utilizando o endereço IP da máquina onde o aplicativo está sendo executado.
-
-## Contribuição
-
-Sinta-se à vontade para contribuir com melhorias para este projeto. Faça um fork do repositório, crie um branch para suas alterações e envie um pull request.
-
-## Licença
-
-Este projeto está licenciado sob a Licença MIT.
+```bash
+pip install streamlit pandas matplotlib
